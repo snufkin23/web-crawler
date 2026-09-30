@@ -5,3 +5,6 @@ The goal is simple : designing, hands-on practise and implementation with MongoD
 
 I also want to keep this project AI free. I want every line of code to be written by me, for something i want to own and feel proud of.
 To be honest, AI ma dherai dependent vayara ni ho
+
+
+P.S : to follow hexagonal project architecture
