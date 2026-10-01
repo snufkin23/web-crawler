@@ -16,13 +16,13 @@ import (
 func main() {
 	logger.Info("Initializing web crawler system...")
 
-	// 1. Load configuration from your .env file
+	// 1. Load configuration
 	cfg := config.NewConfig()
 
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 
-	// 2. Connect to MongoDB using the URI from your config
+	// 2. Connect to MongoDB
 	clientOptions := options.Client().ApplyURI(cfg.MongoURI)
 	client, err := mongo.Connect(clientOptions)
 	if err != nil {
@@ -30,7 +30,7 @@ func main() {
 	}
 	defer client.Disconnect(ctx)
 
-	// 3. Select database and collection using your adapters' constants
+	// 3. Select database and collection
 	collection := client.Database(mongodb.DatabaseName).Collection(mongodb.CollectionName)
 
 	// 4. Instantiate adapters (The outside world)
